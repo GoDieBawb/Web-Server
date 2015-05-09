@@ -39,7 +39,9 @@ public class WebServer {
             t.sendResponseHeaders(200, file.length());
             
             try (OutputStream os = t.getResponseBody()) {
+                
                 Files.copy(file.toPath(), os);
+                
             }
             
         }
